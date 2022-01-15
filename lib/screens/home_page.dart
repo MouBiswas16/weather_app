@@ -8,8 +8,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: Colors.blue.withOpacity(0.20),
+      appBar: AppBar(
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "Pasuruan",
+          style: TextStyle(
+            color: Color(0xff333333),
+            fontWeight: FontWeight.w800,
+            fontSize: 24,
+          ),
+        ),
+      ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
@@ -22,6 +37,7 @@ class HomeScreen extends StatelessWidget {
                   Color(0xff928ACE),
                   Color(0xff594DB5),
                 ],
+                // stops: [0.1, 0.3, 0.7],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -31,8 +47,8 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  "asstes/Moon cloud fast wind.png",
-                  scale: 1.0,
+                  "asstes/images/Moon_cloud_fast_wind.png",
+                  // scale: 1.0,
                 ),
                 Text(
                   "23°",
