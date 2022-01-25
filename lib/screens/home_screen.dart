@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 const textColor = Color(0xff333333);
+const textLightColor = Color(0xffF5F5F5);
 const defultPaddin = 20.0;
 
 class HomeScreen extends StatelessWidget {
@@ -19,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(top: defultPaddin),
           child: Column(
@@ -58,12 +59,57 @@ class HomeScreen extends StatelessWidget {
                     Stack(
                       alignment: Alignment.bottomCenter,
                       children: [
-                        SizedBox(
-                          height: 260,
-                          width: double.infinity,
+                        Positioned(
+                          bottom: 517,
+                          child: SizedBox(
+                            height: 260,
+                            width: double.infinity,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xffD4D1F0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 434,
                           child: Container(
+                            height: 122,
+                            width: 315,
+                            // margin: EdgeInsets.symmetric(horizontal: 20),
                             decoration: BoxDecoration(
-                              color: Color(0xffD4D1F0),
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                            ),
+                            child: Column(
+                              // mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    WeatherDetails(
+                                      imageName: "carbon_humidity",
+                                      value: "75%",
+                                      label: "Humidity",
+                                    ),
+                                    SizedBox(width: defultPaddin),
+                                    WeatherDetails(
+                                      imageName: "tabler_wind",
+                                      value: "8 km/h",
+                                      label: "Wind",
+                                    ),
+                                    SizedBox(width: defultPaddin),
+                                    WeatherDetails(
+                                      imageName: "ion_speedometer",
+                                      value: "1011",
+                                      label: "Air Pressure",
+                                    ),
+                                    SizedBox(width: defultPaddin),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -76,6 +122,40 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class WeatherDetails extends StatelessWidget {
+  final String? imageName;
+  final String? value;
+  final String? label;
+  const WeatherDetails({Key? key, this.imageName, this.value, this.label})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset("assets/images/$imageName.svg"),
+        Text(
+          "$value",
+          style: TextStyle(
+            fontSize: 12,
+            color: textColor,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        Text(
+          "$label",
+          style: TextStyle(
+            fontSize: 9,
+            color: Color(0xffC8C5F4),
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -102,7 +182,7 @@ class DailyWeatherCard extends StatelessWidget {
                 colors: [
                   Color(0xff594DB5),
                   Color(0xff928ACE),
-                  Color(0xff594DB5),
+                  Color(0xff4E41B0),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -120,17 +200,18 @@ class DailyWeatherCard extends StatelessWidget {
                 Text(
                   "23°",
                   style: TextStyle(
-                    color: Color(0xffF5F5F5),
+                    color: textLightColor,
                     fontWeight: FontWeight.w700,
                     fontSize: 72,
                   ),
                 ),
                 Text(
-                  "Moon Cloud Fast Wind",
+                  '''Moon Cloud Fast Wind''',
                   style: TextStyle(
-                    color: Color(0xffF5F5F5),
+                    color: textLightColor,
                     fontWeight: FontWeight.w900,
                     fontSize: 11,
+                    letterSpacing: 1,
                   ),
                 ),
               ],
@@ -143,7 +224,8 @@ class DailyWeatherCard extends StatelessWidget {
             height: 34,
             width: 140,
             decoration: BoxDecoration(
-              color: Color(0xffFFFFFF),
+              // color: Color(0xffFFFFFF),
+              color: textLightColor,
               borderRadius: BorderRadiusDirectional.circular(40),
             ),
             child: Center(
