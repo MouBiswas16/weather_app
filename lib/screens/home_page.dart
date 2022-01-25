@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Page extends StatelessWidget {
+  const Page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +46,10 @@ class HomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "asstes/images/Moon_cloud_fast_wind.png",
-                  // scale: 1.0,
-                ),
+                // Image.asset(
+                //   "asstes/images/Moon_cloud_fast_wind.svg",
+                //   // scale: 1.0,
+                // ),
                 Text(
                   "23°",
                   style: TextStyle(
