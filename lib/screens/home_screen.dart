@@ -72,7 +72,7 @@ class HomeScreen extends StatelessWidget {
               width: 315,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
+                color: textLightColor,
               ),
               child: Column(
                 children: [
@@ -184,7 +184,7 @@ class HourlyWeatherCard extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SvgPicture.asset("assets/images/Moon_cloud_fast_wind.svg"),
+          SvgPicture.asset("assets/images/moon_cloud_fast_wind.png"),
           Text(
             "24°",
             style: TextStyle(
@@ -241,10 +241,6 @@ class DailyWeatherCard extends StatelessWidget {
     return Stack(
       alignment: Alignment.topCenter,
       children: [
-        // SizedBox(
-        //   height: 300,
-        //   width: 230,
-        // ),
         Positioned(
           top: 20,
           child: Container(
@@ -265,8 +261,8 @@ class DailyWeatherCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  "assets/images/Moon_cloud_fast_wind.svg",
+                Image.asset(
+                  "assets/images/moon_cloud_fast_wind.png",
                   height: 134,
                   width: 130,
                 ),
@@ -297,7 +293,6 @@ class DailyWeatherCard extends StatelessWidget {
             height: 34,
             width: 140,
             decoration: BoxDecoration(
-              // color: Color(0xffFFFFFF),
               color: textLightColor,
               borderRadius: BorderRadiusDirectional.circular(40),
             ),
