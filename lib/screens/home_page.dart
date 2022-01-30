@@ -8,8 +8,8 @@ const textColor = Color(0xff333333);
 const textLightColor = Color(0xffF5F5F5);
 const defultPaddin = 20.0;
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 12,
                     ),
                   ),
-                  SizedBox(height: defultPaddin * 2),
+                  SizedBox(height: defultPaddin),
                   CarouselSlider(
                     options: CarouselOptions(height: 350),
                     items: [1, 2, 3, 4].map((i) {
@@ -47,57 +47,48 @@ class HomeScreen extends StatelessWidget {
                       });
                     }).toList(),
                   ),
-                  // Stack(
-                  //   alignment: Alignment.bottomCenter,
-                  //   children: [
-                  //     Positioned(
-                  //       bottom: 517,
-                  //       child: SizedBox(
-                  //         height: 260,
-                  //         width: double.infinity,
-                  //         child: Container(
-                  //           decoration: BoxDecoration(
-                  //             color: Color(0xffD4D1F0),
-                  //           ),
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
                 ],
               ),
             ),
             Container(
-              height: 122,
-              width: 315,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: textLightColor,
-              ),
+              color: textLightColor,
+              // height: 122,
+              // width: 315,
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      WeatherDetails(
-                        imageName: "carbon_humidity",
-                        value: "75%",
-                        label: "Humidity",
+                  Transform.translate(
+                    offset: Offset(0, -60),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: defultPaddin),
+                      height: 122,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: textLightColor,
                       ),
-                      SizedBox(width: defultPaddin),
-                      WeatherDetails(
-                        imageName: "tabler_wind",
-                        value: "8 km/h",
-                        label: "Wind",
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          WeatherDetails(
+                            imageName: "carbon_humidity",
+                            value: "75%",
+                            label: "Humidity",
+                          ),
+                          SizedBox(width: defultPaddin),
+                          WeatherDetails(
+                            imageName: "tabler_wind",
+                            value: "8 km/h",
+                            label: "Wind",
+                          ),
+                          SizedBox(width: defultPaddin),
+                          WeatherDetails(
+                            imageName: "ion_speedometer",
+                            value: "1011",
+                            label: "Air Pressure",
+                          ),
+                        ],
                       ),
-                      SizedBox(width: defultPaddin),
-                      WeatherDetails(
-                        imageName: "ion_speedometer",
-                        value: "1011",
-                        label: "Air Pressure",
-                      ),
-                    ],
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -184,7 +175,10 @@ class HourlyWeatherCard extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SvgPicture.asset("assets/images/moon_cloud_fast_wind.png"),
+          Image.asset(
+            "assets/images/moon_cloud_fast_wind.png",
+            scale: 4,
+          ),
           Text(
             "24°",
             style: TextStyle(
