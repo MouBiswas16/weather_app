@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
             Container(
               child: Column(
                 children: [
+                  SizedBox(height: defultPaddin),
                   Text(
                     "Pasuruan",
                     style: TextStyle(
@@ -50,6 +51,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 30),
             Container(
               color: textLightColor,
               // height: 122,
@@ -59,34 +61,43 @@ class HomePage extends StatelessWidget {
                   Transform.translate(
                     offset: Offset(0, -60),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: defultPaddin),
+                      margin: EdgeInsets.symmetric(horizontal: 30),
                       height: 122,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: textLightColor,
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          WeatherDetails(
-                            imageName: "carbon_humidity",
-                            value: "75%",
-                            label: "Humidity",
-                          ),
-                          SizedBox(width: defultPaddin),
-                          WeatherDetails(
-                            imageName: "tabler_wind",
-                            value: "8 km/h",
-                            label: "Wind",
-                          ),
-                          SizedBox(width: defultPaddin),
-                          WeatherDetails(
-                            imageName: "ion_speedometer",
-                            value: "1011",
-                            label: "Air Pressure",
-                          ),
-                        ],
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            WeatherDetails(
+                              imageName: "carbon_humidity",
+                              value: "75%",
+                              label: "Humidity",
+                            ),
+                            SizedBox(width: defultPaddin),
+                            WeatherDetails(
+                              imageName: "tabler_wind",
+                              value: "8 km/h",
+                              label: "Wind",
+                            ),
+                            SizedBox(width: defultPaddin),
+                            WeatherDetails(
+                              imageName: "ion_speedometer",
+                              value: "1011",
+                              label: "Air Pressure",
+                            ),
+                            SizedBox(width: defultPaddin),
+                            WeatherDetails(
+                              imageName: "ic_round-visibility",
+                              value: "6 km",
+                              label: "Visibility",
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
