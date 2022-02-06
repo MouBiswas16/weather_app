@@ -53,9 +53,6 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Container(
-              color: textLightColor,
-              // height: 122,
-              // width: 315,
               child: Column(
                 children: [
                   Transform.translate(
@@ -67,43 +64,47 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: textLightColor,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xff9087D4),
+                            spreadRadius: 0,
+                            blurRadius: 15,
+                            offset: Offset(2, 20),
+                          ),
+                        ],
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            WeatherDetails(
-                              imageName: "carbon_humidity",
-                              value: "75%",
-                              label: "Humidity",
-                            ),
-                            SizedBox(width: defultPaddin),
-                            WeatherDetails(
-                              imageName: "tabler_wind",
-                              value: "8 km/h",
-                              label: "Wind",
-                            ),
-                            SizedBox(width: defultPaddin),
-                            WeatherDetails(
-                              imageName: "ion_speedometer",
-                              value: "1011",
-                              label: "Air Pressure",
-                            ),
-                            SizedBox(width: defultPaddin),
-                            WeatherDetails(
-                              imageName: "ic_round-visibility",
-                              value: "6 km",
-                              label: "Visibility",
-                            ),
-                          ],
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          WeatherDetails(
+                            imageName: "carbon_humidity",
+                            value: "75%",
+                            label: "Humidity",
+                          ),
+                          SizedBox(width: defultPaddin),
+                          WeatherDetails(
+                            imageName: "tabler_wind",
+                            value: "8 km/h",
+                            label: "Wind",
+                          ),
+                          SizedBox(width: defultPaddin),
+                          WeatherDetails(
+                            imageName: "ion_speedometer",
+                            value: "1011",
+                            label: "Air Pressure",
+                          ),
+                          SizedBox(width: defultPaddin),
+                          WeatherDetails(
+                            imageName: "ic_round-visibility",
+                            value: "6 km",
+                            label: "Visibility",
+                          ),
+                        ],
                       ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: defultPaddin, vertical: defultPaddin),
+                    padding: EdgeInsets.symmetric(horizontal: defultPaddin),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -133,6 +134,7 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(height: 28),
                   Container(
                     height: 132,
                     child: ListView.builder(
