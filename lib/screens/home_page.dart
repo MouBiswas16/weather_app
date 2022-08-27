@@ -3,10 +3,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-const textColor = Color(0xff333333);
-const textLightColor = Color(0xffF5F5F5);
-const defultPaddin = 20.0;
+import '../components/colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,18 +24,18 @@ class HomePage extends StatelessWidget {
                   SizedBox(height: defultPaddin),
                   Text(
                     "Pasuruan",
-                    style: TextStyle(
-                      color: textColor,
+                    style: GoogleFonts.nunitoSans(
                       fontWeight: FontWeight.w800,
+                      color: textColor,
                       fontSize: 24,
                     ),
                   ),
                   Text(
                     "17.45 PM",
-                    style: TextStyle(
-                      color: textColor,
+                    style: GoogleFonts.nunitoSans(
                       fontWeight: FontWeight.w600,
                       fontSize: 12,
+                      color: textColor,
                     ),
                   ),
                   SizedBox(height: defultPaddin),
@@ -110,19 +109,20 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           "Today",
-                          style: TextStyle(
-                              color: textColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w900),
+                          style: GoogleFonts.nunitoSans(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 16,
+                            color: textColor,
+                          ),
                         ),
                         Row(
                           children: [
                             Text(
                               "Next 7 Days",
-                              style: TextStyle(
+                              style: GoogleFonts.nunitoSans(
+                                fontWeight: FontWeight.w900,
                                 color: textColor,
                                 fontSize: 16,
-                                fontWeight: FontWeight.w900,
                               ),
                             ),
                             Icon(
@@ -182,10 +182,10 @@ class HourlyWeatherCard extends StatelessWidget {
         children: [
           Text(
             "06:00 AM",
-            style: TextStyle(
-              color: textLightColor,
-              fontSize: 11,
+            style: GoogleFonts.nunitoSans(
               fontWeight: FontWeight.w600,
+              fontSize: 12,
+              color: textLightColor,
             ),
           ),
           Image.asset(
@@ -194,10 +194,10 @@ class HourlyWeatherCard extends StatelessWidget {
           ),
           Text(
             "24°",
-            style: TextStyle(
-              color: textLightColor,
-              fontSize: 18,
+            style: GoogleFonts.nunitoSans(
               fontWeight: FontWeight.w900,
+              fontSize: 18,
+              color: textLightColor,
             ),
           ),
         ],
